@@ -1,0 +1,8 @@
+---
+- name: install pip
+  sudo: yes
+  apt: name=python-pip update_cache=yes
+
+- name: install docker-py
+  sudo: yes
+  pip: name=docker-py version=1.1.0
