@@ -1,8 +1,12 @@
 ---
+- name: make sure docker-python is not installed
+  sudo: yes
+  apt: name=docker-python state=absent
+
 - name: install pip
   sudo: yes
   apt: name=python-pip update_cache=yes
 
 - name: install docker-py
   sudo: yes
-  pip: name=docker-py version=1.1.0
+  pip: name=docker-py==1.5.0

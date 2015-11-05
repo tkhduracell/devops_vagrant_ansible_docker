@@ -1,4 +1,5 @@
 - name: Docker Playbook
   hosts: default
+  cow_selection: random  
   roles:
     - docker

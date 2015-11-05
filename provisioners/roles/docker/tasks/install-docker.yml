@@ -1,7 +1,11 @@
 ---
 - name: download docker installation script
   sudo: yes
-  get_url: url=https://get.docker.com/ dest=/etc/docker.sh mode=740
+  shell: wget -O /etc/docker.sh https://get.docker.com/
+
+- name: chmod docker.sh
+  sudo: yes
+  file: path=/etc/docker.sh mode=0744
 
 - name: install docker
   sudo: yes
